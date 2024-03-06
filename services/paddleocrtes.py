@@ -3,7 +3,7 @@ from paddleocr import PaddleOCR
 
 class PaddleOCRTES(BASEOCR):
     def text_detection(self,image):
-        ocr = PaddleOCR(use_angle_cls=True, lang='en')
+        ocr = PaddleOCR(use_angle_cls=True, lang=self.language)
         result = ocr.ocr(image, cls=True)
         for idx in range(len(result)):
             res = result[idx]
